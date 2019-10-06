@@ -1,1 +1,1 @@
-This code controls the THAT5171 gain and GPI0
+This code controls the THAT5171 gain and GPI0!
