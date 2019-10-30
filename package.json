@@ -4,7 +4,8 @@
   "description": "This code controls the THAT5171 gain and GPI0!",
   "main": "index.js",
   "dependencies": {
-    "cjs-module": "^1.5.0"
+    "cjs-module": "^1.5.0",
+    "spi-device": "^3.0.0"
   },
   "devDependencies": {},
   "scripts": {
