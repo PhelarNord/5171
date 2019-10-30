@@ -1,0 +1,23 @@
+{
+  "name": "5171",
+  "version": "1.0.0",
+  "description": "This code controls the THAT5171 gain and GPI0!",
+  "main": "index.js",
+  "dependencies": {
+    "cjs-module": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PhelarNord/5171.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PhelarNord/5171/issues"
+  },
+  "homepage": "https://github.com/PhelarNord/5171#readme"
+}
