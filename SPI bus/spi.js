@@ -1,7 +1,7 @@
 const spi = require('spi-device');
  
 // The pre is on bus 0 and it's device 0
-const pre = spi.open(0, 0, err => { // Is this right for my device?
+const pre = spi.open(0, 000, err => { // Is this right for my device?
   // An SPI message is an array of one or more read+write transfers
   const message = [{
     sendBuffer: Buffer.from([0,0]), //Does binary work here or hex?
