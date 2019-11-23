@@ -1,13 +1,13 @@
 const spi = require('spi-device');
  
 // The pre is on bus 0 and it's device 0
-const pre = spi.open(0, 0, err => {
+const pre = spi.open(0, 0, err => { // Is this right for my device?
   // An SPI message is an array of one or more read+write transfers
   const message = [{
-    sendBuffer: Buffer.from([0,0]), // Sent to read channel 5
-    receiveBuffer: Buffer.alloc(2),              // Raw data read from channel 5
-    byteLength: 2,
-    speedHz: 10000000 // Use a low bus speed to get a good reading from the TMP36
+    sendBuffer: Buffer.from([0,0,]), //Does binary work here or hex?
+    receiveBuffer: Buffer.alloc(1),              
+    byteLength: 1,
+    speedHz: 10000000 // Does this work? 10Mhz or do i get like 7,8
   }];
  
   if (err) throw err;
@@ -19,7 +19,7 @@ const pre = spi.open(0, 0, err => {
     const data = message[0].receiveBuffer[1];      
    
  
-    console.log(sendBuffer);
+    console.log(data);
   });
 });
 
