@@ -4,9 +4,9 @@ const spi = require('spi-device');
 const pre = spi.open(0, 0, err => {
   // An SPI message is an array of one or more read+write transfers
   const message = [{
-    sendBuffer: Buffer.from([0,0,]), // Sent to read channel 5
-    receiveBuffer: Buffer.alloc(1),              // Raw data read from channel 5
-    byteLength: 1,
+    sendBuffer: Buffer.from([0,0]), // Sent to read channel 5
+    receiveBuffer: Buffer.alloc(2),              // Raw data read from channel 5
+    byteLength: 2,
     speedHz: 10000000 // Use a low bus speed to get a good reading from the TMP36
   }];
  
@@ -19,6 +19,7 @@ const pre = spi.open(0, 0, err => {
     const data = message[0].receiveBuffer[1];      
    
  
-    console.log(celcius);
+    console.log(sendBuffer);
   });
 });
+
