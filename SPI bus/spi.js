@@ -16,7 +16,7 @@ const pre = spi.open(0, 0, err => { // Is this right for my device?
     if (err) throw err;
  
     // Convert raw value from data and log to console
-    const data = message[0].receiveBuffer[1];      
+    const data = message[0].receiveBuffer[2];      
    
  
     console.log(data);
