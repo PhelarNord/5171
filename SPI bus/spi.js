@@ -16,7 +16,7 @@ const pre = spi.open(0, 0, err => { // There is just one chip, and its on bus 0
   
   // An SPI message is an array of one or more read+write transfers
   const message = [{
-    sendBuffer: Buffer.from([thatControll.Register(20),thatControll.Data(0)]), //Do binary with prefix 0b, The bit train is 16 bit
+    sendBuffer: Buffer.from([thatControll.Register(4).padStart(8,'0'),thatControll.Data(0).padStart(8,'0')]), //Do binary with prefix 0b, The bit train is 16 bit
     receiveBuffer: Buffer.alloc(2), //The chip rx/tx is 16bit, lets alloc 2 bytes              
     byteLength: 2,
     speedHz: 10000000 // Does this work? 10Mhz or do i get like 7,8
@@ -28,7 +28,7 @@ const pre = spi.open(0, 0, err => { // There is just one chip, and its on bus 0
     if (err) throw err;
  
     // Convert raw value from data and log to console
-    const data = message[0].receiveBuffer[2];      
+    const data = message[0].receiveBuffer[1];      
    
  
     console.log(data);
