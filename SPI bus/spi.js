@@ -1,10 +1,21 @@
 const spi = require('spi-device');
+
+const thatControll={
+  Register: function(reg){
+    return (reg>>>0).toString(2)
+  },
+  Data: function(data){   
+    return (data>>>0).toString(2);
+  }
+}
+
  
 // The pre is on bus 0 and it's device 0
 const pre = spi.open(0, 0, err => { // There is just one chip, and its on bus 0
+  
   // An SPI message is an array of one or more read+write transfers
   const message = [{
-    sendBuffer: Buffer.from([0b00000000,0b00000000]), //Do binary with prefix 0b, The bit train is 16 bit
+    sendBuffer: Buffer.from([thatControll.Register(),0b00000000]), //Do binary with prefix 0b, The bit train is 16 bit
     receiveBuffer: Buffer.alloc(2), //The chip rx/tx is 16bit, lets alloc 2 bytes              
     byteLength: 2,
     speedHz: 10000000 // Does this work? 10Mhz or do i get like 7,8
