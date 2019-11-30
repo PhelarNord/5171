@@ -1,5 +1,6 @@
 const spi = require('spi-device');
 
+// Integer to binary, for message send buffer
 const thatControll={
   Register: function(reg){
     return '0b' + (reg>>>0).toString(2)
